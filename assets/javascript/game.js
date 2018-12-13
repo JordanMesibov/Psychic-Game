@@ -45,9 +45,12 @@ document.onkeypress = function(event) {
     losses++;
     alert("You ran out of lives! The computer wins!");
     console.log(losses);
+        // grab the "userLosses" h2 tag from index.html and update it to reflect the variable losses
     updatedLosses.textContent = "Number of losses: " + losses;
-    // grab the "userLosses" h2 tag from index.html and update it to reflect the variable losses
+
 
   }
 
 };
+
+//now i just need to make the guesses left and guesses variables reset to 0 whenever a wins++ or a losses++ event occurs
