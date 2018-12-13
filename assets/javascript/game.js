@@ -9,12 +9,15 @@ var guessesLeft = 7;
 // set up the computer choice guess
 
 var computerChoice = alphabet[Math.floor(Math.random() * 26)];
+console.log(computerChoice);
 
 
 // set up a function for checking the key that the user pressed against the letter chosen by the computer
 document.onkeypress = function(event) {
 
   var userChoice = event.key;
+
+  console.log(userChoice);
 // if user's letter is the same as computer's letter, then they get +1 wins and a win alert
   if (userChoice === computerChoice) {
     wins++;
@@ -32,7 +35,7 @@ document.onkeypress = function(event) {
     losses++;
     alert("You ran out of lives! The computer wins!");
     // grab the "userLosses" h2 tag from index.html and update it to reflect the variable losses
-    
+
   }
 
 };
