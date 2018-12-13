@@ -5,14 +5,14 @@ var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
 var wins = 0;
 var losses = 0;
 var guessesLeft = 7;
+var guesses = 0;
 
 var updatedWins = document.getElementById("xUserWins");
 var updatedGuesses = document.getElementById("xUserGuesses");
 var updatedGuessesLeft = document.getElementById("xGuessesLeft");
 var updatedLosses = document.getElementById("xUserLosses");
 
-// set up the computer choice guess
-
+// set up the computer choice
 var computerChoice = alphabet[Math.floor(Math.random() * 26)];
 console.log(computerChoice);
 
@@ -31,6 +31,10 @@ document.onkeypress = function(event) {
     console.log(wins);
     // grab the "userWins" h2 tag from index.html and update it to reflect the variable wins
     updatedWins.textContent = "Number of wins: " + wins;
+    updatedGuesses.textContent = "Your guesses so far: " + 0;
+    updatedGuessesLeft.textContent = "Guesses left: " + 7;
+    guesses = 0;
+    guessesLeft = 7;
     
   }
   // if user's letter is not the3 same as computer's letter, then they lose a guess
@@ -47,10 +51,12 @@ document.onkeypress = function(event) {
     console.log(losses);
         // grab the "userLosses" h2 tag from index.html and update it to reflect the variable losses
     updatedLosses.textContent = "Number of losses: " + losses;
-
-
+    updatedGuesses.textContent = "Your guesses so far: " + 0;
+    updatedGuessesLeft.textContent = "Guesses left: " + 7;
+    guesses = 0;
+    guessesLeft = 7;
   }
 
 };
 
-//now i just need to make the guesses left and guesses variables reset to 0 whenever a wins++ or a losses++ event occurs
+//now I need to figure out how to get the computer to choose a new key after a game ends, because I don't think it is doing that anymore.
