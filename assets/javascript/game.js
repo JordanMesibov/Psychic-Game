@@ -4,15 +4,30 @@ var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
 // declare the variables "wins", "losses", and "guesses"
 var wins = 0;
 var losses = 0;
-var guesses = 0;
+var guessesLeft = 7;
 
 // set up the computer choice guess
 
-
-// set up the function that checks what happens if the user's guess matches the computer's guess (the win condition)
-
-
-//     as part of that same function, make the else statement do the following: Reduce the guesses left by one (starting from 7)
+var computerChoice = alphabet[Math.floor(Math.random() * 26)];
 
 
-// set up the function that checks what happens if the user's guesses reach 0 (the loss condition)
+// set up a function for checking the key that the user pressed against the letter chosen by the computer
+document.onkeypress = function(event) {
+
+  var userChoice = event.key;
+// if user's letter is the same as computer's letter, then they get +1 wins and a win alert
+  if (userChoice === computerChoice) {
+    wins++;
+    alert("You guessed correctly!");
+  }
+  // if user's letter is not the3 same as computer's letter, then they lose a guess
+  else {
+    guessesLeft--;
+  }
+  // if user's guesses becomes 0, then they get +1 losses and a loss alert
+  if (guessesLeft ===0) {
+    losses++;
+    alert("You ran out of lives! The computer wins!");
+  }
+
+};
