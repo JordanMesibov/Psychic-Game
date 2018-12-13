@@ -19,15 +19,20 @@ document.onkeypress = function(event) {
   if (userChoice === computerChoice) {
     wins++;
     alert("You guessed correctly!");
+    // grab the "userWins" h2 tag from index.html and update it to reflect the variable wins
+    
   }
   // if user's letter is not the3 same as computer's letter, then they lose a guess
   else {
     guessesLeft--;
+    // grab the "guessesLeft" h2 tag from index.html and update it to reflect the variable guessesLeft
   }
   // if user's guesses becomes 0, then they get +1 losses and a loss alert
   if (guessesLeft ===0) {
     losses++;
     alert("You ran out of lives! The computer wins!");
+    // grab the "userLosses" h2 tag from index.html and update it to reflect the variable losses
+    
   }
 
 };
