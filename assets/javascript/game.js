@@ -6,6 +6,11 @@ var wins = 0;
 var losses = 0;
 var guessesLeft = 7;
 
+var updatedWins = document.getElementById("xUserWins");
+var updatedGuesses = document.getElementById("xUserGuesses");
+var updatedGuessesLeft = document.getElementById("xGuessesLeft");
+var updatedLosses = document.getElementById("xUserLosses");
+
 // set up the computer choice guess
 
 var computerChoice = alphabet[Math.floor(Math.random() * 26)];
@@ -17,23 +22,30 @@ document.onkeypress = function(event) {
 
   var userChoice = event.key;
 
+
   console.log(userChoice);
 // if user's letter is the same as computer's letter, then they get +1 wins and a win alert
   if (userChoice === computerChoice) {
     wins++;
     alert("You guessed correctly!");
+    console.log(wins);
     // grab the "userWins" h2 tag from index.html and update it to reflect the variable wins
+    updatedWins.textContent = "Number of wins: " + wins;
     
   }
   // if user's letter is not the3 same as computer's letter, then they lose a guess
   else {
     guessesLeft--;
+    console.log(guessesLeft);
     // grab the "guessesLeft" h2 tag from index.html and update it to reflect the variable guessesLeft
+    updatedGuessesLeft.textContent = "Guesses left: " + guessesLeft;
   }
   // if user's guesses becomes 0, then they get +1 losses and a loss alert
-  if (guessesLeft ===0) {
+  if (guessesLeft === 0) {
     losses++;
     alert("You ran out of lives! The computer wins!");
+    console.log(losses);
+    updatedLosses.textContent = "Number of losses: " + losses;
     // grab the "userLosses" h2 tag from index.html and update it to reflect the variable losses
 
   }
