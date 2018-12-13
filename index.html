@@ -11,7 +11,7 @@
 </head>
 <body>
   <!--Create the main container that houses all of the content-->
-  <div class="containter">
+  <div class="main-content">
     
     <!--Create a row within the container so that I can create three columns for the content of the game-->
     <div class="row">
@@ -21,15 +21,26 @@
       <!--In this first/left column, I will track and display: 1) "Your guesses so far: ____" 
         
         & 2) "Guesses left: ____" -->
+        
 
       </div>
 
       <div class="col-6">
-        <!--In this middle (large) column, I will display 1) an image for the psychic game, 
-          
-          2) instructions for the user (including the specific text, "Guess which letter I'm thinking of"), 
-          
-          and 3) a display of the user's key-press input -->
+        <div class="row">
+          <!--psychic game image goes here-->
+          <img class="psychic-pic" src="assets/images/psychic-game-title-picture.jpg">
+
+        </div>    
+        
+        <div class="row">
+          <!--and 2) make a Jumbotron that says "Psychic Game" and the instructions-->
+         <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+              <h1 class="display-4">Can you guess which letter I'm thinking of?</h1>
+              <p class="lead">You get seven guesses before you lose!</p>
+            </div>
+          </div>
+        </div>
 
       </div>
       

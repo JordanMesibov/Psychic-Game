@@ -1,0 +1,10 @@
+.main-content {
+    display: flex;
+    align-items: center;
+}
+
+.psychic-pic {
+  max-width: 100%;
+  min-width: 100%;
+  max-height: 350px;
+}
